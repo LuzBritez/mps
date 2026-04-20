@@ -1,0 +1,21 @@
+# pg_tileserv — Configuración para Trazabilidad Eléctrica de Campo
+# Requerimientos: 9.2, 9.6
+
+[Server]
+# Puerto del servidor de tiles vectoriales
+HttpPort = 7800
+# Habilitar CORS para permitir acceso desde la app Flutter
+CORSOrigins = ["*"]
+
+[Database]
+# Conexión a PostgreSQL/PostGIS via variable de entorno
+# Formato: postgresql://usuario:contraseña@host:puerto/base_de_datos
+DbConnection = "${DATABASE_URL}"
+
+[Limits]
+# Límite máximo de features por tile (evita tiles demasiado pesados en zoom bajo)
+MaxFeaturesPerTile = 10000
+
+[Cache]
+# TTL de caché de tiles en segundos (5 minutos)
+TTLSeconds = 300

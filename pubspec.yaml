@@ -1,0 +1,44 @@
+name: trazado_electrico
+description: Módulo de trazabilidad eléctrica de campo para la provincia de Formosa.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.10.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Mapa
+  maplibre_gl: ^0.19.0
+
+  # Base de datos local
+  sqflite: ^2.3.0
+
+  # Tiempo NTP
+  ntp: ^2.0.0
+
+  # Conectividad
+  connectivity_plus: ^5.0.0
+
+  # Preferencias persistentes
+  shared_preferences: ^2.2.0
+
+  # Supabase
+  supabase_flutter: ^2.0.0
+
+  # Directorio de caché de la app
+  path_provider: ^2.1.0
+
+  # Captura de imágenes con cámara (Req. 6.6, 6.7)
+  image_picker: ^1.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
