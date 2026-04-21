@@ -1,0 +1,2879 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -57.94319398922429,
+              -25.8999836554093
+            ],
+            [
+              -57.9434452113542,
+              -25.9002551093041
+            ],
+            [
+              -57.9431529121372,
+              -25.9005005669669
+            ],
+            [
+              -57.9429003838246,
+              -25.900220579297
+            ],
+            [
+              -57.94319398922429,
+              -25.8999836554093
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "FORMOSA",
+        "CENTRO DE DISTRIBUCION": "C.D. LA EMILIA",
+        "POTENCIA INSTALADA (KVA)": "5000",
+        "UBICACION": "SOBRE RUTA PROVINCIAL N° 6 (ACCESOA ESTANCIA LA EMILIA)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.1761565185835,
+              -26.1665903207269
+            ],
+            [
+              -58.1764349881912,
+              -26.1666811847564
+            ],
+            [
+              -58.1763112827431,
+              -26.166976520027
+            ],
+            [
+              -58.1760374673385,
+              -26.1668847813021
+            ],
+            [
+              -58.1761565185835,
+              -26.1665903207269
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "FORMOSA",
+        "CENTRO DE DISTRIBUCION": "C.D. N° 1",
+        "POTENCIA INSTALADA (KVA)": "20000",
+        "UBICACION": "AV. GORLERI N° 580"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.28000176542779,
+              -25.3466473809758
+            ],
+            [
+              -58.2800469285067,
+              -25.3466177907896
+            ],
+            [
+              -58.2800662723171,
+              -25.3466462176468
+            ],
+            [
+              -58.2800198030555,
+              -25.3466772797308
+            ],
+            [
+              -58.28000176542779,
+              -25.3466473809758
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "RIACHO HE HE",
+        "CENTRO DE DISTRIBUCION": "C.D. RIACHO HE HE RUTA 2",
+        "POTENCIA INSTALADA (KVA)": "2500",
+        "UBICACION": "EMPALME RUTA PROVINCIAL N° 2 Y RUTA PROVINCIAL N° 6"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.1748703486043,
+              -26.1960888225587
+            ],
+            [
+              -58.17509091732169,
+              -26.1961674608191
+            ],
+            [
+              -58.1750438454049,
+              -26.196296985044
+            ],
+            [
+              -58.17482197050491,
+              -26.1962190001407
+            ],
+            [
+              -58.1748703486043,
+              -26.1960888225587
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "FORMOSA",
+        "CENTRO DE DISTRIBUCION": "C.D. N° 12",
+        "POTENCIA INSTALADA (KVA)": "20000",
+        "UBICACION": "FORTIN YUNKA Y GUIRALDE"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.2733942520583,
+              -25.3621233138735
+            ],
+            [
+              -58.2737152958501,
+              -25.3621029566909
+            ],
+            [
+              -58.2737312337258,
+              -25.3622852667229
+            ],
+            [
+              -58.2734088837513,
+              -25.3623040181129
+            ],
+            [
+              -58.2733942520583,
+              -25.3621233138735
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "RIACHO HE HE",
+        "CENTRO DE DISTRIBUCION": "C.D. RIACHO HE HE REFSA 2",
+        "POTENCIA INSTALADA (KVA)": "5000",
+        "UBICACION": "CALLE SILVIO AYALA ENTRE SIXTO AYALA Y AV. SAN MARTIN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -59.1088257960124,
+              -25.7332549138755
+            ],
+            [
+              -59.1092071480921,
+              -25.7337153379116
+            ],
+            [
+              -59.10882879826341,
+              -25.7339783843868
+            ],
+            [
+              -59.1086090165318,
+              -25.7337015203954
+            ],
+            [
+              -59.1084566864839,
+              -25.7335125339361
+            ],
+            [
+              -59.1088257960124,
+              -25.7332549138755
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "PIRANE",
+        "CENTRO DE DISTRIBUCION": "C.D. PIRANE",
+        "POTENCIA INSTALADA (KVA)": "20000",
+        "UBICACION": "AVENIDA 9 DE JULIO ESQUINA SARMIENTO"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -59.358141914653,
+              -26.1906701058507
+            ],
+            [
+              -59.35770888412189,
+              -26.1904762010507
+            ],
+            [
+              -59.3579260447685,
+              -26.1900937338184
+            ],
+            [
+              -59.3581401094699,
+              -26.1901891583949
+            ],
+            [
+              -59.3583631336644,
+              -26.1902780955337
+            ],
+            [
+              -59.358141914653,
+              -26.1906701058507
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "VILLA 213",
+        "CENTRO DE DISTRIBUCION": "C.D. VILLA 213",
+        "POTENCIA INSTALADA (KVA)": "7500",
+        "UBICACION": "RUTA PROVINCIAL N° 3 ESQUINA REP. DE ALEMANIA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.1646546770121,
+              -26.1869320549641
+            ],
+            [
+              -58.1648582160558,
+              -26.1870076368941
+            ],
+            [
+              -58.1647634610529,
+              -26.1872349640125
+            ],
+            [
+              -58.16455861582651,
+              -26.1871600354927
+            ],
+            [
+              -58.1646546770121,
+              -26.1869320549641
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "FORMOSA",
+        "CENTRO DE DISTRIBUCION": "C.D. N° 3",
+        "POTENCIA INSTALADA (KVA)": "40000",
+        "UBICACION": "CALLE RIVADAVIA ESQUINA FOTHERINGHAM"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.17594875656521,
+              -26.1837335474194
+            ],
+            [
+              -58.1761693252826,
+              -26.1838121856798
+            ],
+            [
+              -58.1761222533658,
+              -26.1839417099047
+            ],
+            [
+              -58.1759003784658,
+              -26.1838637250014
+            ],
+            [
+              -58.17594875656521,
+              -26.1837335474194
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "FORMOSA",
+        "CENTRO DE DISTRIBUCION": "C.D. N° 8",
+        "POTENCIA INSTALADA (KVA)": "20000",
+        "UBICACION": "CALLE SARMIENTO AL 650"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.1899130889439,
+              -26.18184622304
+            ],
+            [
+              -58.1900416974237,
+              -26.1818790136561
+            ],
+            [
+              -58.1899537542902,
+              -26.1821429807147
+            ],
+            [
+              -58.1898238396278,
+              -26.1821047305049
+            ],
+            [
+              -58.1899130889439,
+              -26.18184622304
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "FORMOSA",
+        "CENTRO DE DISTRIBUCION": "C.D. N° 4",
+        "POTENCIA INSTALADA (KVA)": "20000",
+        "UBICACION": "PEDRO FREITAS ESQUINA JUNIN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.3507614258883,
+              -26.400309113047
+            ],
+            [
+              -58.3509248273092,
+              -26.4004199202188
+            ],
+            [
+              -58.3507130045393,
+              -26.4006831912453
+            ],
+            [
+              -58.3506390989449,
+              -26.400648431742
+            ],
+            [
+              -58.3505496595432,
+              -26.4005758038314
+            ],
+            [
+              -58.3507614258883,
+              -26.400309113047
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "TATANE",
+        "CENTRO DE DISTRIBUCION": "C.D. TATANE",
+        "POTENCIA INSTALADA (KVA)": "1200",
+        "UBICACION": "SOBRE RUTA NACIONAL 11 - ROTONDA RUTA 11 Y RUTA PROVINCIAL 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -60.01611195089,
+              -25.5326665468439
+            ],
+            [
+              -60.0157626428382,
+              -25.5328440685246
+            ],
+            [
+              -60.0155268810511,
+              -25.5324712701879
+            ],
+            [
+              -60.0157046649453,
+              -25.5323887627296
+            ],
+            [
+              -60.015878500314,
+              -25.5323012670823
+            ],
+            [
+              -60.01611195089,
+              -25.5326665468439
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "PERIN",
+        "CENTRO DE DISTRIBUCION": "C.D. PERIN",
+        "POTENCIA INSTALADA (KVA)": "2500",
+        "UBICACION": "AVENIDA 25 DE MAYO S/N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -59.5816787960026,
+              -24.93712596972239
+            ],
+            [
+              -59.5818351854706,
+              -24.9374276213609
+            ],
+            [
+              -59.5815024466452,
+              -24.9375541983651
+            ],
+            [
+              -59.5813611404096,
+              -24.9372552235267
+            ],
+            [
+              -59.5816787960026,
+              -24.93712596972239
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "COLONIA EL PAVAO",
+        "CENTRO DE DISTRIBUCION": "C.D. EL PAVAO",
+        "POTENCIA INSTALADA (KVA)": "630",
+        "UBICACION": "CRUCE RUTA NACIONAL 95 Y RUTA PROVINCIAL 20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.6329762170998,
+              -26.2436053239261
+            ],
+            [
+              -58.6323813652027,
+              -26.2436596360792
+            ],
+            [
+              -58.632330937156,
+              -26.2432193157281
+            ],
+            [
+              -58.63262365050711,
+              -26.2431968556524
+            ],
+            [
+              -58.6329344385716,
+              -26.2431676326183
+            ],
+            [
+              -58.6329762170998,
+              -26.2436053239261
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "MISION LAISHI",
+        "CENTRO DE DISTRIBUCION": "C.D. LAISHI",
+        "POTENCIA INSTALADA (KVA)": "5000",
+        "UBICACION": "CALLE ITURRALDE ESQUINA P. FREITAS"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -59.8320196698096,
+              -24.300838714285
+            ],
+            [
+              -59.83234912012071,
+              -24.3007392635913
+            ],
+            [
+              -59.8324766700294,
+              -24.3011041966075
+            ],
+            [
+              -59.83214544868059,
+              -24.3011963673781
+            ],
+            [
+              -59.8320196698096,
+              -24.300838714285
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "CABO 1° LUGONES",
+        "CENTRO DE DISTRIBUCION": "C.D. LUGONES",
+        "POTENCIA INSTALADA (KVA)": "2500",
+        "UBICACION": "RUTA PROVINCIAL N° 26 (ACCESOA A LOCALIDAD DE LUGONES)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -59.6584584798142,
+              -24.4348466111318
+            ],
+            [
+              -59.6589327906687,
+              -24.4348820695797
+            ],
+            [
+              -59.658928292936,
+              -24.4351977171754
+            ],
+            [
+              -59.65844926996411,
+              -24.4351792582147
+            ],
+            [
+              -59.6584584798142,
+              -24.4348466111318
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "SAN MARTIN 2",
+        "CENTRO DE DISTRIBUCION": "C.D. SAN MARTIN 2",
+        "POTENCIA INSTALADA (KVA)": "5000",
+        "UBICACION": "RUTA NACIONAL N° 86 ESQUINA J. NEWBERY"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -57.98467486825861,
+              -25.249522271101
+            ],
+            [
+              -57.98465361561039,
+              -25.2498583902463
+            ],
+            [
+              -57.98436131639329,
+              -25.2498359651433
+            ],
+            [
+              -57.98438466879361,
+              -25.2495005507822
+            ],
+            [
+              -57.98467486825861,
+              -25.249522271101
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "CLORINDA",
+        "CENTRO DE DISTRIBUCION": "C.D. PALMA SOLA",
+        "POTENCIA INSTALADA (KVA)": "2500",
+        "UBICACION": "RUTA NACIONAL N° 86 S/N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -60.3176768134387,
+              -24.8909170388318
+            ],
+            [
+              -60.31759385804379,
+              -24.8909736779708
+            ],
+            [
+              -60.3175246526649,
+              -24.8908791579928
+            ],
+            [
+              -60.31756062124991,
+              -24.8908547539908
+            ],
+            [
+              -60.3176068795821,
+              -24.89082379368971
+            ],
+            [
+              -60.3176768134387,
+              -24.8909170388318
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "POZO DEL TIGRE",
+        "CENTRO DE DISTRIBUCION": "C.D. TIGRE",
+        "POTENCIA INSTALADA (KVA)": "3500",
+        "UBICACION": "RUTA NACIONAL N° 81 ESQUINA ANGELA RODRIGUEZ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -59.33131812071069,
+              -25.5615718763082
+            ],
+            [
+              -59.3310675847661,
+              -25.5617464349588
+            ],
+            [
+              -59.3309050505755,
+              -25.5615425480352
+            ],
+            [
+              -59.33101130984049,
+              -25.5614738574357
+            ],
+            [
+              -59.3311544917966,
+              -25.5613801260714
+            ],
+            [
+              -59.33131812071069,
+              -25.5615718763082
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "PALO SANTO",
+        "CENTRO DE DISTRIBUCION": "C.D. PALO SANTO",
+        "POTENCIA INSTALADA (KVA)": "7500",
+        "UBICACION": "RUTA PROVINCIAL N° 23 ESQUINA ARGENTINO ALEGRE"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.2091907095715,
+              -26.2065972996287
+            ],
+            [
+              -58.2094283079625,
+              -26.2066759375089
+            ],
+            [
+              -58.2092620283303,
+              -26.2070805025576
+            ],
+            [
+              -58.2090231237566,
+              -26.2070025182195
+            ],
+            [
+              -58.2091907095715,
+              -26.2065972996287
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "FORMOSA",
+        "CENTRO DE DISTRIBUCION": "C.D. N° 7",
+        "POTENCIA INSTALADA (KVA)": "20000",
+        "UBICACION": "AVENIDA ARTURO ILLIA ESQUINA AVELLANEDA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -57.7174895067674,
+              -25.2843876301052
+            ],
+            [
+              -57.7175227490747,
+              -25.2846991232993
+            ],
+            [
+              -57.7172747270091,
+              -25.2847228751444
+            ],
+            [
+              -57.7172435844538,
+              -25.2844090063547
+            ],
+            [
+              -57.7174895067674,
+              -25.2843876301052
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "CLORINDA",
+        "CENTRO DE DISTRIBUCION": "C.D. N°1",
+        "POTENCIA INSTALADA (KVA)": "20000",
+        "UBICACION": "CALLE SAN LORENZO ESQUINA HERTELENDY"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.1619205629103,
+              -26.1310686261317
+            ],
+            [
+              -58.162161567236,
+              -26.1311457332115
+            ],
+            [
+              -58.1619918816691,
+              -26.1316535369903
+            ],
+            [
+              -58.1617470167097,
+              -26.1315786126446
+            ],
+            [
+              -58.1619205629103,
+              -26.1310686261317
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "FORMOSA",
+        "CENTRO DE DISTRIBUCION": "C.D. N° 5",
+        "POTENCIA INSTALADA (KVA)": "20000",
+        "UBICACION": "MZ 12 - SOBRE AV. DE LOS CONSTITUYENTES"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -59.0777187069728,
+              -26.2064689824534
+            ],
+            [
+              -59.07719002918029,
+              -26.2064438320529
+            ],
+            [
+              -59.0772257587916,
+              -26.2060037704731
+            ],
+            [
+              -59.0774916151712,
+              -26.2060173185335
+            ],
+            [
+              -59.0777456307752,
+              -26.2060326750819
+            ],
+            [
+              -59.0777187069728,
+              -26.2064689824534
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "COLONIA VILLAFAÑE",
+        "CENTRO DE DISTRIBUCION": "C.D. VILLAFAÑE",
+        "POTENCIA INSTALADA (KVA)": "8500",
+        "UBICACION": "H. IRIGOYEN EQUINA ROQUE DALBIES"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -57.74654487958029,
+              -25.2837594909891
+            ],
+            [
+              -57.7460927898963,
+              -25.2836117785181
+            ],
+            [
+              -57.74615321772539,
+              -25.2834416853696
+            ],
+            [
+              -57.7466030693416,
+              -25.2835782075019
+            ],
+            [
+              -57.74654487958029,
+              -25.2837594909891
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "CLORINDA",
+        "CENTRO DE DISTRIBUCION": "C.D. N°2",
+        "POTENCIA INSTALADA (KVA)": "20000",
+        "UBICACION": "FRANCISCO BOGARIN Y SANTISIMA TRINIDAD - MZ 137"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.05793652422599,
+              -26.0396918035774
+            ],
+            [
+              -58.0582626769199,
+              -26.0399908311699
+            ],
+            [
+              -58.0580146548543,
+              -26.0403619045225
+            ],
+            [
+              -58.05769060191239,
+              -26.0400665987718
+            ],
+            [
+              -58.05793652422599,
+              -26.0396918035774
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "FORMOSA",
+        "CENTRO DE DISTRIBUCION": "C.D. MOJON DE FIERRO",
+        "POTENCIA INSTALADA (KVA)": "5000",
+        "UBICACION": "SOBRE RUTA PROVINCIAL N° 6"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -60.5906698032506,
+              -24.7100567156099
+            ],
+            [
+              -60.59029976021909,
+              -24.7103354705954
+            ],
+            [
+              -60.58999830504741,
+              -24.7099892622063
+            ],
+            [
+              -60.590123492073,
+              -24.7099011355592
+            ],
+            [
+              -60.5903845261396,
+              -24.7097083444019
+            ],
+            [
+              -60.5906698032506,
+              -24.7100567156099
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "LAS LOMITAS",
+        "CENTRO DE DISTRIBUCION": "C.D. LAS LOMITAS",
+        "POTENCIA INSTALADA (KVA)": "20000",
+        "UBICACION": "CALLE MATIENZO ESQUINA RIVADAVIA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -61.2510909778751,
+              -24.2678484224876
+            ],
+            [
+              -61.2508069602565,
+              -24.2680468642051
+            ],
+            [
+              -61.25062699694521,
+              -24.267821735017
+            ],
+            [
+              -61.2508093772943,
+              -24.2676995210344
+            ],
+            [
+              -61.2509150876261,
+              -24.2676289439273
+            ],
+            [
+              -61.2510909778751,
+              -24.2678484224876
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "LAGUNA YEMA",
+        "CENTRO DE DISTRIBUCION": "C.D. CEDEVA",
+        "POTENCIA INSTALADA (KVA)": "2500",
+        "UBICACION": "RUTA PROVINCIAL N° 37 (ACCESO A PREDIO CEDEVA)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -61.0363959660733,
+              -24.4017209017814
+            ],
+            [
+              -61.0362132494518,
+              -24.401855429026
+            ],
+            [
+              -61.0360820910165,
+              -24.4016891176721
+            ],
+            [
+              -61.0362072780421,
+              -24.401600991025
+            ],
+            [
+              -61.03626565899249,
+              -24.4015570807235
+            ],
+            [
+              -61.0363959660733,
+              -24.4017209017814
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "POZO DEL MORTERO",
+        "CENTRO DE DISTRIBUCION": "C.D. MORTERO",
+        "POTENCIA INSTALADA (KVA)": "630",
+        "UBICACION": "EX RUTA NACIONAL N° 81"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.2702051720876,
+              -26.2705905042685
+            ],
+            [
+              -58.2700572674051,
+              -26.2709268481764
+            ],
+            [
+              -58.269833134261,
+              -26.2706475763544
+            ],
+            [
+              -58.2703404056881,
+              -26.2702500775498
+            ],
+            [
+              -58.2702051720876,
+              -26.2705905042685
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "FORMOSA",
+        "CENTRO DE DISTRIBUCION": "C.D. N° 10",
+        "POTENCIA INSTALADA (KVA)": "20000",
+        "UBICACION": "B° NUEVA POMPEYA - SOBRE RUTA N° 11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -57.7573934380233,
+              -25.298220210501
+            ],
+            [
+              -57.7573892150486,
+              -25.2984454739458
+            ],
+            [
+              -57.7572672125679,
+              -25.2984384294538
+            ],
+            [
+              -57.75727353529461,
+              -25.2982107903317
+            ],
+            [
+              -57.7573934380233,
+              -25.298220210501
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "CLORINDA",
+        "CENTRO DE DISTRIBUCION": "C.D. B° 1° DE MAYO",
+        "POTENCIA INSTALADA (KVA)": "5000",
+        "UBICACION": "RUTA NACIONAL N° 86 ESQUINA AV. DE LOS CONSTITUYENTES"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -62.0474804475437,
+              -23.1931989328076
+            ],
+            [
+              -62.0476252786469,
+              -23.1933330692391
+            ],
+            [
+              -62.04747943368099,
+              -23.1934546728262
+            ],
+            [
+              -62.04745947574141,
+              -23.1934384189872
+            ],
+            [
+              -62.0473355348984,
+              -23.1933210756837
+            ],
+            [
+              -62.0474804475437,
+              -23.1931989328076
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "PALMAR LARGO",
+        "CENTRO DE DISTRIBUCION": "C.D. PALMAR LARGO",
+        "POTENCIA INSTALADA (KVA)": "6000",
+        "UBICACION": "PALMAR LARGO"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -60.184402378002,
+              -24.2175198992086
+            ],
+            [
+              -60.1847576214908,
+              -24.2173902043456
+            ],
+            [
+              -60.1848814866598,
+              -24.217684567739
+            ],
+            [
+              -60.1845244721334,
+              -24.2178170640342
+            ],
+            [
+              -60.184402378002,
+              -24.2175198992086
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "POSTA CAMBIO ZALAZAR",
+        "CENTRO DE DISTRIBUCION": "C.D. ZALAZAR",
+        "POTENCIA INSTALADA (KVA)": "2500",
+        "UBICACION": "RUTA NACIONAL N° 86 - KM 1602"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -61.4579751989772,
+              -24.0966620806395
+            ],
+            [
+              -61.45789502973451,
+              -24.0965574790364
+            ],
+            [
+              -61.4579954403846,
+              -24.0964904470263
+            ],
+            [
+              -61.45801300279929,
+              -24.096509263727
+            ],
+            [
+              -61.45807918151059,
+              -24.0965958673002
+            ],
+            [
+              -61.4579751989772,
+              -24.0966620806395
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "LOS CHIRIGUANOS",
+        "CENTRO DE DISTRIBUCION": "C.D. CHIRIGUANOS",
+        "POTENCIA INSTALADA (KVA)": "2000",
+        "UBICACION": "RUTA NACIONAL N° 81 ESQUINA CALLE RIVADAVIA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.5508998800925,
+              -24.982808465357
+            ],
+            [
+              -58.5514391770148,
+              -24.982588564874
+            ],
+            [
+              -58.5516576355274,
+              -24.9830874866255
+            ],
+            [
+              -58.55111473367921,
+              -24.9833131549901
+            ],
+            [
+              -58.5508998800925,
+              -24.982808465357
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "EL ESPINILLO",
+        "CENTRO DE DISTRIBUCION": "C.D. ESPINILLO REFSA",
+        "POTENCIA INSTALADA (KVA)": "5000",
+        "UBICACION": "ANTARTIDA ARGENTINA ESQUINA SARMIENTO"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -60.6004596761741,
+              -24.6961553931501
+            ],
+            [
+              -60.60032804857351,
+              -24.69624539719049
+            ],
+            [
+              -60.6002037020076,
+              -24.6961034111854
+            ],
+            [
+              -60.6003357009026,
+              -24.6960152845384
+            ],
+            [
+              -60.6003378839301,
+              -24.6960143392838
+            ],
+            [
+              -60.6004596761741,
+              -24.6961553931501
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "LAS LOMITAS",
+        "CENTRO DE DISTRIBUCION": "C.D. RUTA N° 81",
+        "POTENCIA INSTALADA (KVA)": "630",
+        "UBICACION": "SOBRE RUTA NACIONAL N° 81 ACCESO A RUTA PROVINCIAL Nº 32 A SOLEDAD"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -61.2379694009929,
+              -24.2526746374651
+            ],
+            [
+              -61.2377866843714,
+              -24.2528091647096
+            ],
+            [
+              -61.2376555259361,
+              -24.2526428533558
+            ],
+            [
+              -61.23778071296171,
+              -24.2525547267087
+            ],
+            [
+              -61.2378390939121,
+              -24.2525108164072
+            ],
+            [
+              -61.2379694009929,
+              -24.2526746374651
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "LAGUNA YEMA",
+        "CENTRO DE DISTRIBUCION": "C.D. LAGUNA YEMA",
+        "POTENCIA INSTALADA (KVA)": "2500",
+        "UBICACION": "RUTA NACIONAL N° 81 ESQUINA CALLE AYOHUMA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -60.08949672604741,
+              -25.0483236120493
+            ],
+            [
+              -60.0893037916217,
+              -25.0484570936971
+            ],
+            [
+              -60.0891487916433,
+              -25.0482778708866
+            ],
+            [
+              -60.0892024540396,
+              -25.0482392180873
+            ],
+            [
+              -60.0893442803908,
+              -25.0481391374117
+            ],
+            [
+              -60.08949672604741,
+              -25.0483236120493
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "ESTANISLAO DEL CAMPO",
+        "CENTRO DE DISTRIBUCION": "C.D. CAMPO",
+        "POTENCIA INSTALADA (KVA)": "5000",
+        "UBICACION": "RUTA NACIONAL N° 81 Y RUTA PROVINCIAL N° 26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.2314956287123,
+              -26.1781805058545
+            ],
+            [
+              -58.23202273155509,
+              -26.178350817766
+            ],
+            [
+              -58.2319211646827,
+              -26.1786025603932
+            ],
+            [
+              -58.2313893497225,
+              -26.178429845194
+            ],
+            [
+              -58.2314956287123,
+              -26.1781805058545
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "FORMOSA",
+        "CENTRO DE DISTRIBUCION": "C.D. N° 11",
+        "POTENCIA INSTALADA (KVA)": "20000",
+        "UBICACION": "MANZANA 4 - B° LOTE 111"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.6658181506992,
+              -26.6219704964028
+            ],
+            [
+              -58.6658372430642,
+              -26.6219898564178
+            ],
+            [
+              -58.6658027162173,
+              -26.6220200116484
+            ],
+            [
+              -58.6657853189689,
+              -26.621997885917
+            ],
+            [
+              -58.6658181506992,
+              -26.6219704964028
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "VILLA ESCOLAR",
+        "CENTRO DE DISTRIBUCION": "C.D. VILLA ESCOLAR",
+        "POTENCIA INSTALADA (KVA)": "2500",
+        "UBICACION": "SOBRE RUTA PROVINCIAL N° 9 - VILLA ESCOLAR"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -59.9272949736177,
+              -25.1519264719021
+            ],
+            [
+              -59.9271367724156,
+              -25.1520400122246
+            ],
+            [
+              -59.92702977999529,
+              -25.1519159292097
+            ],
+            [
+              -59.9271214202625,
+              -25.1518450266833
+            ],
+            [
+              -59.92718110526211,
+              -25.1518045420675
+            ],
+            [
+              -59.9272949736177,
+              -25.1519264719021
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "IBARRETA",
+        "CENTRO DE DISTRIBUCION": "C.D. COLONIA JUANITA",
+        "POTENCIA INSTALADA (KVA)": "315",
+        "UBICACION": "SOBRE RUTA NACIONAL N° 81 Y ACCESO A COLONIA JUANITA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -60.8567346677733,
+              -23.8922870831294
+            ],
+            [
+              -60.85660955531161,
+              -23.8927617669883
+            ],
+            [
+              -60.8574048013815,
+              -23.8927314140849
+            ],
+            [
+              -60.8574412248656,
+              -23.8922336264686
+            ],
+            [
+              -60.8567346677733,
+              -23.8922870831294
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "ACCESO A BAJO HONDO",
+        "CENTRO DE DISTRIBUCION": "C.D. LA BANDERITA - BAJO HONDO",
+        "POTENCIA INSTALADA (KVA)": "315",
+        "UBICACION": "RUTA NACIONAL N° 86 - ACCESO A BAJO HONDO"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -59.6270491767618,
+              -25.3631912138673
+            ],
+            [
+              -59.6270596436618,
+              -25.3632054772523
+            ],
+            [
+              -59.62704678928681,
+              -25.3632151180335
+            ],
+            [
+              -59.6270366594804,
+              -25.363200307558
+            ],
+            [
+              -59.6270491767618,
+              -25.3631912138673
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "COMANDANTE FONTANA",
+        "CENTRO DE DISTRIBUCION": "C.D. BARTOLOME DE LAS CASAS",
+        "POTENCIA INSTALADA (KVA)": "630",
+        "UBICACION": "RUTA NACIONAL N° 81 (ACCESO A BARTOLOME DE LAS CASAS)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -61.8008686595816,
+              -23.6596694923624
+            ],
+            [
+              -61.80087232791141,
+              -23.659703678185
+            ],
+            [
+              -61.8008267985556,
+              -23.6597115193518
+            ],
+            [
+              -61.80082426914699,
+              -23.6596781311576
+            ],
+            [
+              -61.8008686595816,
+              -23.6596694923624
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "POZO SARGENTO",
+        "CENTRO DE DISTRIBUCION": "C.D. POZO SARGENTO",
+        "POTENCIA INSTALADA (KVA)": "2000",
+        "UBICACION": "RUTA PROVINCIAL N° 39 - DESVIO A POZO DE MAZA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -60.47081599536679,
+              -24.0191478421714
+            ],
+            [
+              -60.4710075980697,
+              -24.019425950649
+            ],
+            [
+              -60.4705623589175,
+              -24.0197349811471
+            ],
+            [
+              -60.4703792929687,
+              -24.0194563035525
+            ],
+            [
+              -60.47081599536679,
+              -24.0191478421714
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "EL REMANSO RUTA NN°86",
+        "CENTRO DE DISTRIBUCION": "C.D. EL REMANSO",
+        "POTENCIA INSTALADA (KVA)": "100",
+        "UBICACION": "RUTA NACIONAL N° 86 - ACCESO A EL REMANSO"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -61.3599940656816,
+              -24.1735537748966
+            ],
+            [
+              -61.3600069215906,
+              -24.1735698928276
+            ],
+            [
+              -61.3599864133452,
+              -24.1735854508069
+            ],
+            [
+              -61.3599740376798,
+              -24.1735681248754
+            ],
+            [
+              -61.3599940656816,
+              -24.1735537748966
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "LAGUNA YEMA",
+        "CENTRO DE DISTRIBUCION": "C.D. LA MARTONA",
+        "POTENCIA INSTALADA (KVA)": "160",
+        "UBICACION": "SOBRE RUTA NACIONAL N°81 (HABILITADO 2016)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -61.16707226224,
+              -23.6738181825518
+            ],
+            [
+              -61.1671960511969,
+              -23.6740455838078
+            ],
+            [
+              -61.1668071546216,
+              -23.6742399372425
+            ],
+            [
+              -61.1666989275504,
+              -23.6739918971098
+            ],
+            [
+              -61.16707226224,
+              -23.6738181825518
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "GUADALCAZAR",
+        "CENTRO DE DISTRIBUCION": "C.D. GUADALCAZAR",
+        "POTENCIA INSTALADA (KVA)": "630",
+        "UBICACION": "RUTA NACIONAL N°86 - LOCALIDAD DE GUADALCAZAR"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -61.6651640863169,
+              -24.3574798154521
+            ],
+            [
+              -61.6648800686984,
+              -24.3576782571696
+            ],
+            [
+              -61.6647001053871,
+              -24.3574531279814
+            ],
+            [
+              -61.6648824857362,
+              -24.3573309139989
+            ],
+            [
+              -61.664988196068,
+              -24.3572603368918
+            ],
+            [
+              -61.6651640863169,
+              -24.3574798154521
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "EL AYBAL",
+        "CENTRO DE DISTRIBUCION": "C.D. AYBAL",
+        "POTENCIA INSTALADA (KVA)": "2500",
+        "UBICACION": "RUTA PROVINCIAL N° 9 S/N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -61.54863988388729,
+              -24.4698654873679
+            ],
+            [
+              -61.5483558662688,
+              -24.47006392908539
+            ],
+            [
+              -61.5481759029575,
+              -24.4698387998972
+            ],
+            [
+              -61.5483582833066,
+              -24.4697165859147
+            ],
+            [
+              -61.5484639936384,
+              -24.4696460088076
+            ],
+            [
+              -61.54863988388729,
+              -24.4698654873679
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "SUMAYEN",
+        "CENTRO DE DISTRIBUCION": "C.D. SUMAYEN",
+        "POTENCIA INSTALADA (KVA)": "400",
+        "UBICACION": "RUTA PROVINCIAL N° 9 - ACCESO A SUMAYEN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.1377013157277,
+              -25.208224259986
+            ],
+            [
+              -58.1374480473262,
+              -25.2083791788086
+            ],
+            [
+              -58.13761625065911,
+              -25.2086799758364
+            ],
+            [
+              -58.1378714511613,
+              -25.2085200378951
+            ],
+            [
+              -58.1377013157277,
+              -25.208224259986
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "NAICK NECK",
+        "CENTRO DE DISTRIBUCION": "C.D. NAICK NECK",
+        "POTENCIA INSTALADA (KVA)": "5000",
+        "UBICACION": "RUTA NACIONAL N° 86"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.15776191660931,
+              -26.1499994939378
+            ],
+            [
+              -58.1580233565433,
+              -26.1500842442234
+            ],
+            [
+              -58.1578587798784,
+              -26.1504804560336
+            ],
+            [
+              -58.157608806017,
+              -26.1503948311399
+            ],
+            [
+              -58.15776191660931,
+              -26.1499994939378
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "FORMOSA",
+        "CENTRO DE DISTRIBUCION": "C.D. N° 9",
+        "POTENCIA INSTALADA (KVA)": "20000",
+        "UBICACION": "MZ 150 - SOBRE AV. MARADONA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.5396155483015,
+              -26.7085653695108
+            ],
+            [
+              -58.5393889712489,
+              -26.708794028457
+            ],
+            [
+              -58.539703739969,
+              -26.7090481619068
+            ],
+            [
+              -58.5399325275869,
+              -26.7088144919517
+            ],
+            [
+              -58.5396155483015,
+              -26.7085653695108
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "MANSILLA",
+        "CENTRO DE DISTRIBUCION": "C.D. COLONIA CANO",
+        "POTENCIA INSTALADA (KVA)": "2500",
+        "UBICACION": "RUTA PROVINCIAL N° 9 KM 29.40"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.2779283630701,
+              -26.0817701714753
+            ],
+            [
+              -58.2779183230055,
+              -26.08151931848809
+            ],
+            [
+              -58.2783460581895,
+              -26.0815128043879
+            ],
+            [
+              -58.27835225954761,
+              -26.0817769636145
+            ],
+            [
+              -58.2779283630701,
+              -26.0817701714753
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "FORMOSA",
+        "CENTRO DE DISTRIBUCION": "C.D. POLO CIENTIFICO",
+        "POTENCIA INSTALADA (KVA)": "2500",
+        "UBICACION": "PLANTA FRANCCIONADORA DE OXIGENO - POLO CIENTIFICO Y TECNOLOGICO"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.8211168787519,
+              -26.497986813946
+            ],
+            [
+              -58.8213392724183,
+              -26.4976413096696
+            ],
+            [
+              -58.821037188386,
+              -26.4974674467771
+            ],
+            [
+              -58.820820075152,
+              -26.4978144048944
+            ],
+            [
+              -58.8211168787519,
+              -26.497986813946
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "KILOMETRO 142",
+        "CENTRO DE DISTRIBUCION": "C.D. KM 142",
+        "POTENCIA INSTALADA (KVA)": "2500",
+        "UBICACION": "RUTA PROVINCIAL N° 9 KM 68.20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -60.28203745220591,
+              -24.3293789207991
+            ],
+            [
+              -60.28212264644871,
+              -24.329480196806
+            ],
+            [
+              -60.2821954934169,
+              -24.3294164557088
+            ],
+            [
+              -60.28211505822281,
+              -24.3293238793533
+            ],
+            [
+              -60.28203745220591,
+              -24.3293789207991
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "LAS LOMITAS",
+        "CENTRO DE DISTRIBUCION": "C.D. EL DESCANSO - POZO MOLINA",
+        "POTENCIA INSTALADA (KVA)": "315",
+        "UBICACION": "RUTA PROVINCIAL N° 28 (ACCESO A POZO MOLINA)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.5168551459481,
+              -25.2117322788293
+            ],
+            [
+              -58.5164270446948,
+              -25.2120399093782
+            ],
+            [
+              -58.51649158257211,
+              -25.2124981283077
+            ],
+            [
+              -58.5167927593333,
+              -25.2122873045749
+            ],
+            [
+              -58.5168551459481,
+              -25.2117322788293
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "TRES LAGUNAS",
+        "CENTRO DE DISTRIBUCION": "C.D. TRES LAGUNAS",
+        "POTENCIA INSTALADA (KVA)": "5000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -61.84367585718729,
+              -23.8655752832967
+            ],
+            [
+              -61.8436763859995,
+              -23.865577318892
+            ],
+            [
+              -61.8436754357252,
+              -23.8655774514884
+            ],
+            [
+              -61.84367492191409,
+              -23.8655748838141
+            ],
+            [
+              -61.84367585718729,
+              -23.8655752832967
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "ING. JUAREZ",
+        "CENTRO DE DISTRIBUCION": "C.D. RADAR JUAREZ",
+        "POTENCIA INSTALADA (KVA)": "500",
+        "UBICACION": "SOBRE RUTA PROV. N°39 Y ACC. A RADAR (HABILITADO 2018)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -60.6121825942018,
+              -23.9863518934953
+            ],
+            [
+              -60.612168851286,
+              -23.9863285317475
+            ],
+            [
+              -60.61220992611279,
+              -23.9862950734449
+            ],
+            [
+              -60.6122276073296,
+              -23.9863149308114
+            ],
+            [
+              -60.6121825942018,
+              -23.9863518934953
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "PARAJE LA LIBERTAD",
+        "CENTRO DE DISTRIBUCION": "C.D. LA LIBERTAD",
+        "POTENCIA INSTALADA (KVA)": "400",
+        "UBICACION": "RUTA NACIONAL N° 86 (ACCESO A PJE. LA LIBERTAD)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -60.7543407956606,
+              -23.8994123621147
+            ],
+            [
+              -60.7543320910616,
+              -23.8993701312083
+            ],
+            [
+              -60.75421036268411,
+              -23.899393796837
+            ],
+            [
+              -60.7542186592551,
+              -23.8994397680008
+            ],
+            [
+              -60.7543407956606,
+              -23.8994123621147
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "LAMADRID",
+        "CENTRO DE DISTRIBUCION": "C.D. LAMADRID",
+        "POTENCIA INSTALADA (KVA)": "400",
+        "UBICACION": "RUTA NACIONAL N°86 (LAMADRID)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -59.68615723837791,
+              -25.3315343366083
+            ],
+            [
+              -59.6859952567362,
+              -25.3316442456111
+            ],
+            [
+              -59.68587870266439,
+              -25.3315111654527
+            ],
+            [
+              -59.6859781500599,
+              -25.3314501712614
+            ],
+            [
+              -59.6860395895826,
+              -25.3314087754539
+            ],
+            [
+              -59.68615723837791,
+              -25.3315343366083
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "FONTANA",
+        "CENTRO DE DISTRIBUCION": "C.D. FONTANA",
+        "POTENCIA INSTALADA (KVA)": "8150",
+        "UBICACION": "CORRIENTES Y FRANCISCO GUERRERO"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -59.4517023585936,
+              -25.4727154663544
+            ],
+            [
+              -59.4517450678923,
+              -25.4728184711337
+            ],
+            [
+              -59.4516031222817,
+              -25.4728863035494
+            ],
+            [
+              -59.4515579006713,
+              -25.4727757618349
+            ],
+            [
+              -59.4517023585936,
+              -25.4727154663544
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "PALO SANTO",
+        "CENTRO DE DISTRIBUCION": "C.D. ESTANCIA EL TERCIO",
+        "POTENCIA INSTALADA (KVA)": "630",
+        "UBICACION": "RUTA NACIONAL N° 81 Y CAMINO DE ACCESO"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -61.0494438286574,
+              -23.7830451616775
+            ],
+            [
+              -61.0493148378337,
+              -23.7828987048377
+            ],
+            [
+              -61.049518631882,
+              -23.7827127347156
+            ],
+            [
+              -61.0496544005411,
+              -23.7828466948519
+            ],
+            [
+              -61.0494438286574,
+              -23.7830451616775
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "PARAJE MEDIA LUNA",
+        "CENTRO DE DISTRIBUCION": "C.D. MEDIA LUNA",
+        "POTENCIA INSTALADA (KVA)": "100",
+        "UBICACION": "RUTA NACIONAL N°86 - ACCESO A MEDIA LUNA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -59.4827709673166,
+              -24.7539637350082
+            ],
+            [
+              -59.4831576781903,
+              -24.7540851536162
+            ],
+            [
+              -59.4828873937025,
+              -24.7543102276158
+            ],
+            [
+              -59.4825049487943,
+              -24.7541768095804
+            ],
+            [
+              -59.4827709673166,
+              -24.7539637350082
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "GRAL. GUEMES",
+        "CENTRO DE DISTRIBUCION": "C.D. GUEMES",
+        "POTENCIA INSTALADA (KVA)": "2500",
+        "UBICACION": "EN PREDIO DE REFSA - AV. SAN MARTIN Y AV. MALVINAS ARGENTINAS"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.3102141094194,
+              -26.4875731295819
+            ],
+            [
+              -58.3104176484631,
+              -26.487508491929
+            ],
+            [
+              -58.3105510910868,
+              -26.4878429445107
+            ],
+            [
+              -58.3104620476412,
+              -26.4878716543271
+            ],
+            [
+              -58.3103532698021,
+              -26.4879096227571
+            ],
+            [
+              -58.3102141094194,
+              -26.4875731295819
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "HERRADURA",
+        "CENTRO DE DISTRIBUCION": "C.D. HERRADURA",
+        "POTENCIA INSTALADA (KVA)": "5000",
+        "UBICACION": "CALLE CORRIENTES ESQUINA RAMIREZ VELAZCO"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -59.0226272150903,
+              -24.9445292973884
+            ],
+            [
+              -59.0229814811483,
+              -24.9448567412947
+            ],
+            [
+              -59.02254602924379,
+              -24.9450433635395
+            ],
+            [
+              -59.022213710685,
+              -24.9447077709063
+            ],
+            [
+              -59.0226272150903,
+              -24.9445292973884
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "GRAL. BELGRANO",
+        "CENTRO DE DISTRIBUCION": "C.D. BELGRANO",
+        "POTENCIA INSTALADA (KVA)": "5000",
+        "UBICACION": "SOBRE RUTA NACIONAL N° 86 ESQUINA PATIÑO"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.872224290138,
+              -25.8080855786955
+            ],
+            [
+              -58.8720495679818,
+              -25.808208372574
+            ],
+            [
+              -58.8718218214761,
+              -25.8079294514519
+            ],
+            [
+              -58.87189812833729,
+              -25.8078753196526
+            ],
+            [
+              -58.8719904769654,
+              -25.8078064287906
+            ],
+            [
+              -58.872224290138,
+              -25.8080855786955
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "GRAN GUARDIA",
+        "CENTRO DE DISTRIBUCION": "C.D. GRAN GUARDIA",
+        "POTENCIA INSTALADA (KVA)": "1250",
+        "UBICACION": "RUTA NACIONAL 81 - ACCESO A GRAN GUARDIA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -59.151496968274,
+              -25.6339951401087
+            ],
+            [
+              -59.1516793429945,
+              -25.6338840292191
+            ],
+            [
+              -59.15188837129641,
+              -25.63417724011961
+            ],
+            [
+              -59.1518086893868,
+              -25.6342262684997
+            ],
+            [
+              -59.1517120353156,
+              -25.6342889758395
+            ],
+            [
+              -59.151496968274,
+              -25.6339951401087
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "PALO SANTO",
+        "CENTRO DE DISTRIBUCION": "C.D. NUEVO MILENIO S.A.",
+        "POTENCIA INSTALADA (KVA)": "400",
+        "UBICACION": "RUTA NACIONAL 81 - ACCESO A NUEVO MILENIO S.A."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -60.64630910518979,
+              -24.674278757678
+            ],
+            [
+              -60.6463738807325,
+              -24.6742340052788
+            ],
+            [
+              -60.64635858658679,
+              -24.6742134481927
+            ],
+            [
+              -60.64632788176031,
+              -24.6742347202108
+            ],
+            [
+              -60.646294090132,
+              -24.6742581307365
+            ],
+            [
+              -60.64630910518979,
+              -24.674278757678
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "LAS LOMITAS",
+        "CENTRO DE DISTRIBUCION": "C.D. SUMAYEN",
+        "POTENCIA INSTALADA (KVA)": "630",
+        "UBICACION": "SOBRE RUTA NACIONAL N°81 - ESTABLECIMIENTO SUMAYEN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.8256000631359,
+              -24.9602775829978
+            ],
+            [
+              -58.8255902704212,
+              -24.9599808527709
+            ],
+            [
+              -58.82524564483471,
+              -24.9599787508208
+            ],
+            [
+              -58.8252588499849,
+              -24.9602796379515
+            ],
+            [
+              -58.8256000631359,
+              -24.9602775829978
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "MISION TACAAGLE",
+        "CENTRO DE DISTRIBUCION": "C.D. TOLDO CUE",
+        "POTENCIA INSTALADA (KVA)": "630",
+        "UBICACION": "RUTA NACIONAL N° 86"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -61.84574277274311,
+              -23.893672966989
+            ],
+            [
+              -61.846156583999,
+              -23.894428754295
+            ],
+            [
+              -61.8457417609796,
+              -23.8946209893528
+            ],
+            [
+              -61.84544025546789,
+              -23.8940766606103
+            ],
+            [
+              -61.8456304669988,
+              -23.893793366841
+            ],
+            [
+              -61.84574277274311,
+              -23.893672966989
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "INGENIERO JUAREZ",
+        "CENTRO DE DISTRIBUCION": "C.D. JUAREZ",
+        "POTENCIA INSTALADA (KVA)": "10500",
+        "UBICACION": "RUTA NACIONAL N° 81 ESQUINA CALLE MOSCONI"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.7389318630536,
+              -25.2648149316576
+            ],
+            [
+              -58.7389286361598,
+              -25.2651118058936
+            ],
+            [
+              -58.7392728381725,
+              -25.2651290159942
+            ],
+            [
+              -58.7392728381725,
+              -25.2648278392331
+            ],
+            [
+              -58.7389318630536,
+              -25.2648149316576
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "LAGUNA GALLO",
+        "CENTRO DE DISTRIBUCION": "C.D. LAGUNA GALLO",
+        "POTENCIA INSTALADA (KVA)": "5000",
+        "UBICACION": "RUTA PROV. N° 3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -61.0559906532344,
+              -24.3864531103364
+            ],
+            [
+              -61.05580793661289,
+              -24.38658763758099
+            ],
+            [
+              -61.05567677817761,
+              -24.3864213262271
+            ],
+            [
+              -61.0558019652032,
+              -24.3863331995801
+            ],
+            [
+              -61.0558603461535,
+              -24.3862892892786
+            ],
+            [
+              -61.0559906532344,
+              -24.3864531103364
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "POZO DEL MORTERO",
+        "CENTRO DE DISTRIBUCION": "C.D. LIAG DESMOTADORA",
+        "POTENCIA INSTALADA (KVA)": "1250",
+        "UBICACION": "EX RUTA NACIONAL N° 81 KM 1532"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.3489245098139,
+              -25.080653737859
+            ],
+            [
+              -58.3487711177868,
+              -25.0803995418503
+            ],
+            [
+              -58.34846931407549,
+              -25.0805659321533
+            ],
+            [
+              -58.3486277135044,
+              -25.0808220904293
+            ],
+            [
+              -58.3489245098139,
+              -25.080653737859
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "BUENA VISTA",
+        "CENTRO DE DISTRIBUCION": "C.D. LOMA TUYUYU",
+        "POTENCIA INSTALADA (KVA)": "630",
+        "UBICACION": "RUTA NACIONAL N° 86"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.3770627210143,
+              -25.0636877745616
+            ],
+            [
+              -58.3768094526127,
+              -25.0638426933842
+            ],
+            [
+              -58.3769776559456,
+              -25.064143490412
+            ],
+            [
+              -58.3772328564479,
+              -25.0639835524706
+            ],
+            [
+              -58.3770627210143,
+              -25.0636877745616
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "BUENA VISTA",
+        "CENTRO DE DISTRIBUCION": "C.D. BUENA VISTA",
+        "POTENCIA INSTALADA (KVA)": "1250",
+        "UBICACION": "RUTA NACIONAL N° 86 Y AVENIDA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.2427420994619,
+              -26.1988961499841
+            ],
+            [
+              -58.2432692023046,
+              -26.1990664618956
+            ],
+            [
+              -58.2431676354322,
+              -26.1993182045228
+            ],
+            [
+              -58.2426358204721,
+              -26.1991454893236
+            ],
+            [
+              -58.2427420994619,
+              -26.1988961499841
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "FORMOSA",
+        "CENTRO DE DISTRIBUCION": "C.D. N° 6",
+        "POTENCIA INSTALADA (KVA)": "20000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.804497026301,
+              -24.9603515755782
+            ],
+            [
+              -58.80449184352531,
+              -24.9601284646731
+            ],
+            [
+              -58.8046551557486,
+              -24.9601264456954
+            ],
+            [
+              -58.8046636763889,
+              -24.9603477132705
+            ],
+            [
+              -58.804497026301,
+              -24.9603515755782
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "MISION TACAAGLE",
+        "CENTRO DE DISTRIBUCION": "C.D. ESTANCIA ARAGUANEY (GLOBAL)",
+        "POTENCIA INSTALADA (KVA)": "630",
+        "UBICACION": "RUTA NACIONAL N° 86 S/N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.8196538631344,
+              -24.9603259390426
+            ],
+            [
+              -58.8196486803586,
+              -24.9601028281375
+            ],
+            [
+              -58.819811992582,
+              -24.9601008091598
+            ],
+            [
+              -58.8198205132222,
+              -24.9603220767349
+            ],
+            [
+              -58.8196538631344,
+              -24.9603259390426
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "MISION TACAAGLE",
+        "CENTRO DE DISTRIBUCION": "C.D. TACAAGLE",
+        "POTENCIA INSTALADA (KVA)": "2500",
+        "UBICACION": "RUTA NACIONAL N° 86 S/N"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -59.4821335940992,
+              -25.459859020857
+            ],
+            [
+              -59.482176303398,
+              -25.4599620256364
+            ],
+            [
+              -59.4820343577874,
+              -25.4600298580521
+            ],
+            [
+              -59.4819891361769,
+              -25.4599193163376
+            ],
+            [
+              -59.4821335940992,
+              -25.459859020857
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "LOCALIDAD": "PALO SANTO",
+        "CENTRO DE DISTRIBUCION": "C.D. CEITERA GENERAL DEHESA",
+        "POTENCIA INSTALADA (KVA)": "500",
+        "UBICACION": "RUTA NACIONAL N° 81 (ACCESO A ACEITERA)"
+      }
+    }
+  ]
+}
