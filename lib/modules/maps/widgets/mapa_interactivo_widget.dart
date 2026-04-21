@@ -31,7 +31,7 @@ class MapaInteractivoWidget extends StatefulWidget {
 }
 
 class _MapaInteractivoWidgetState extends State<MapaInteractivoWidget> {
-  MaplibreMapController? _controller;
+  MapLibreMapController? _controller;
   StreamSubscription<EstadoCapas>? _capasSub;
   EstadoCapas _estadoCapas = EstadoCapas.inicial;
 
@@ -62,7 +62,7 @@ class _MapaInteractivoWidgetState extends State<MapaInteractivoWidget> {
     super.dispose();
   }
 
-  void _onMapCreated(MaplibreMapController controller) {
+  void _onMapCreated(MapLibreMapController controller) {
     _controller = controller;
     controller.onFeatureTapped.add(_onFeatureTapped);
   }
@@ -187,7 +187,7 @@ class _MapaInteractivoWidgetState extends State<MapaInteractivoWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return MaplibreMap(
+    return MapLibreMap(
       initialCameraPosition: const CameraPosition(
         target: LatLng(_latitudInicial, _longitudInicial),
         zoom: _zoomInicial,

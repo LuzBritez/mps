@@ -71,14 +71,14 @@ class _MonitorCuadrillasViewState extends State<MonitorCuadrillasView> {
                     return Card(
                       child: ListTile(
                         leading: CircleAvatar(
-                          backgroundColor: color.withOpacity(0.15),
+                          backgroundColor: color.withValues(alpha: 0.15),
                           child: Icon(Icons.assignment, color: color, size: 20),
                         ),
                         title: Text('Tarea #${t['id']}'),
                         subtitle: Text('${t['tipo_asignacion']}: ${t['asignada_a']} — $estado'),
                         trailing: Chip(
                           label: Text(estado, style: const TextStyle(fontSize: 11)),
-                          backgroundColor: color.withOpacity(0.12),
+                          backgroundColor: color.withValues(alpha: 0.12),
                           side: BorderSide(color: color),
                           padding: EdgeInsets.zero,
                           labelPadding: const EdgeInsets.symmetric(horizontal: 6),

@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
@@ -36,7 +37,7 @@ class IncidenciaRepository {
 
   Future<bool> _hayConectividad() async {
     final result = await _connectivity.checkConnectivity();
-    return result != ConnectivityResult.none;
+    return result.any((r) => r != ConnectivityResult.none);
   }
 
   Future<int> persistirIncidencia(IncidenciaLocal incidencia) async {
@@ -94,13 +95,10 @@ class IncidenciaRepository {
     });
   }
 
-  /// Sube imagen al servidor de archivos local (Docker).
-  /// Para MVP guarda la ruta local y retorna una URL ficticia.
+  // Req. 6.9, 6.10 — encodes image as base64 data URI stored in imagen_url TEXT.
   Future<String> uploadImagen(String imagenPath) async {
-    // En producción: subir a un servidor de archivos o MinIO
-    // Para MVP: retornar la ruta local como referencia
-    final archivo = File(imagenPath);
-    return 'local://${archivo.uri.pathSegments.last}';
+    final bytes = await File(imagenPath).readAsBytes();
+    return 'data:image/jpeg;base64,${base64Encode(bytes)}';
   }
 
   Future<List<IncidenciaLocal>> obtenerIncidenciasPendientes() async {
