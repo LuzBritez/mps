@@ -42,3 +42,9 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - datos/setas.geojson
+    - datos/lmt.geojson
+    - datos/seccionamientos.geojson
+    - datos/centro de distribucion.geojson
+    - datos/barrios.geojson

@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import '../services/capas_state_service.dart';
 import '../models/estado_capas.dart';
 
-/// Widget con tres toggles independientes para controlar la visibilidad
-/// de las capas del mapa: LMT, Setas y Barrios.
-///
-/// Conectado a [CapasStateService] para persistir el estado entre sesiones.
+/// Widget con toggles independientes para controlar la visibilidad
+/// de las capas del mapa.
 ///
 /// Requerimientos: 2.1–2.5
 class ControlCapasWidget extends StatefulWidget {
@@ -55,6 +53,16 @@ class _ControlCapasWidgetState extends State<ControlCapasWidget> {
               label: 'Barrios',
               value: _estado.barriosVisible,
               onChanged: (_) => widget.capasStateService.toggleBarrios(),
+            ),
+            _CapaToggle(
+              label: 'Secc.',
+              value: _estado.seccionamientosVisible,
+              onChanged: (_) => widget.capasStateService.toggleSeccionamientos(),
+            ),
+            _CapaToggle(
+              label: 'CDN',
+              value: _estado.cdnVisible,
+              onChanged: (_) => widget.capasStateService.toggleCdn(),
             ),
           ],
         ),
