@@ -1,96 +1,46 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
-import '../models/models.dart';
+import '../services/api_client.dart';
 
-/// Vista de monitoreo en tiempo real de cuadrillas — exclusiva del Coordinador.
-///
-/// Se suscribe a Supabase Realtime en las tablas `tareas` e `incidencias`
-/// para mostrar el estado actualizado sin polling.
-///
-/// Requerimientos: (Req. 5.3, Realtime)
+/// Vista de monitoreo de cuadrillas — exclusiva del Coordinador.
+/// Polling cada 10 segundos (sin Realtime en Docker MVP).
 class MonitorCuadrillasView extends StatefulWidget {
-  final SupabaseClient supabase;
-
-  const MonitorCuadrillasView({super.key, required this.supabase});
+  const MonitorCuadrillasView({super.key});
 
   @override
   State<MonitorCuadrillasView> createState() => _MonitorCuadrillasViewState();
 }
 
 class _MonitorCuadrillasViewState extends State<MonitorCuadrillasView> {
-  final List<Map<String, dynamic>> _tareas = [];
-  bool _conectado = false;
+  List<Map<String, dynamic>> _tareas = [];
   bool _cargando = true;
-  RealtimeChannel? _channel;
+  Timer? _timer;
 
   @override
   void initState() {
     super.initState();
-    _cargarYSuscribir();
+    _cargar();
+    _timer = Timer.periodic(const Duration(seconds: 10), (_) => _cargar());
   }
 
   @override
   void dispose() {
-    _channel?.unsubscribe();
+    _timer?.cancel();
     super.dispose();
   }
 
-  Future<void> _cargarYSuscribir() async {
-    setState(() { _cargando = true; });
+  Future<void> _cargar() async {
     try {
-      final rows = await widget.supabase
-          .from('tareas')
-          .select('id, estado, asignada_a, tipo_asignacion, creada_en')
-          .order('creada_en', ascending: false)
-          .limit(50);
-
-      if (mounted) {
-        setState(() {
-          _tareas
-            ..clear()
-            ..addAll(List<Map<String, dynamic>>.from(rows));
-          _cargando = false;
-        });
-      }
-      _suscribirRealtime();
-    } catch (e) {
+      final rows = await apiClient.select('tareas', filters: {
+        'select': 'id,estado,asignada_a,tipo_asignacion,creada_en',
+        'order': 'creada_en.desc',
+        'limit': '50',
+      });
+      if (mounted) setState(() { _tareas = rows; _cargando = false; });
+    } catch (_) {
       if (mounted) setState(() => _cargando = false);
     }
-  }
-
-  void _suscribirRealtime() {
-    _channel?.unsubscribe();
-    _channel = widget.supabase
-        .channel('monitor_cuadrillas')
-        .onPostgresChanges(
-          event: PostgresChangeEvent.all,
-          schema: 'public',
-          table: 'tareas',
-          callback: (payload) {
-            if (!mounted) return;
-            final record = payload.newRecord;
-            if (record.isEmpty) return;
-            final id = (record['id'] as num?)?.toInt();
-            if (id == null) return;
-            setState(() {
-              final idx = _tareas.indexWhere((t) => (t['id'] as num?)?.toInt() == id);
-              if (idx >= 0) {
-                _tareas[idx] = Map<String, dynamic>.from(record);
-              } else {
-                _tareas.insert(0, Map<String, dynamic>.from(record));
-              }
-            });
-          },
-        )
-        .subscribe((status, [error]) {
-          if (!mounted) return;
-          setState(() => _conectado = status == RealtimeSubscribeStatus.subscribed);
-          // Reintento automático si se desconecta
-          if (status == RealtimeSubscribeStatus.closed && error != null) {
-            Future.delayed(const Duration(seconds: 3), _suscribirRealtime);
-          }
-        });
   }
 
   @override
@@ -99,17 +49,7 @@ class _MonitorCuadrillasViewState extends State<MonitorCuadrillasView> {
       appBar: AppBar(
         title: const Text('Monitor de Cuadrillas'),
         actions: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
-            child: Row(mainAxisSize: MainAxisSize.min, children: [
-              Icon(_conectado ? Icons.wifi : Icons.wifi_off,
-                  size: 18, color: _conectado ? Colors.green : Colors.red),
-              const SizedBox(width: 4),
-              Text(_conectado ? 'En vivo' : 'Desconectado',
-                  style: TextStyle(fontSize: 12, color: _conectado ? Colors.green : Colors.red)),
-            ]),
-          ),
-          IconButton(icon: const Icon(Icons.refresh), onPressed: _cargarYSuscribir),
+          IconButton(icon: const Icon(Icons.refresh), onPressed: _cargar),
         ],
       ),
       body: _cargando
@@ -123,43 +63,30 @@ class _MonitorCuadrillasViewState extends State<MonitorCuadrillasView> {
                   itemBuilder: (context, i) {
                     final t = _tareas[i];
                     final estado = t['estado'] as String? ?? 'pendiente';
-                    final asignadaA = t['asignada_a'];
-                    final tipo = t['tipo_asignacion'] as String? ?? '';
+                    final color = switch (estado) {
+                      'completada' => Colors.green,
+                      'en_curso' => Colors.blue,
+                      _ => Colors.orange,
+                    };
                     return Card(
                       child: ListTile(
-                        leading: _iconoEstado(estado),
+                        leading: CircleAvatar(
+                          backgroundColor: color.withOpacity(0.15),
+                          child: Icon(Icons.assignment, color: color, size: 20),
+                        ),
                         title: Text('Tarea #${t['id']}'),
-                        subtitle: Text('$tipo: $asignadaA — $estado'),
-                        trailing: _chipEstado(estado),
+                        subtitle: Text('${t['tipo_asignacion']}: ${t['asignada_a']} — $estado'),
+                        trailing: Chip(
+                          label: Text(estado, style: const TextStyle(fontSize: 11)),
+                          backgroundColor: color.withOpacity(0.12),
+                          side: BorderSide(color: color),
+                          padding: EdgeInsets.zero,
+                          labelPadding: const EdgeInsets.symmetric(horizontal: 6),
+                        ),
                       ),
                     );
                   },
                 ),
-    );
-  }
-
-  Widget _iconoEstado(String estado) {
-    final color = switch (estado) {
-      'completada' => Colors.green,
-      'en_curso' => Colors.blue,
-      _ => Colors.orange,
-    };
-    return CircleAvatar(backgroundColor: color.withOpacity(0.15),
-        child: Icon(Icons.assignment, color: color, size: 20));
-  }
-
-  Widget _chipEstado(String estado) {
-    final (label, color) = switch (estado) {
-      'completada' => ('Completada', Colors.green),
-      'en_curso' => ('En curso', Colors.blue),
-      _ => ('Pendiente', Colors.orange),
-    };
-    return Chip(
-      label: Text(label, style: const TextStyle(fontSize: 11)),
-      backgroundColor: color.withOpacity(0.12),
-      side: BorderSide(color: color),
-      padding: EdgeInsets.zero,
-      labelPadding: const EdgeInsets.symmetric(horizontal: 6),
     );
   }
 }

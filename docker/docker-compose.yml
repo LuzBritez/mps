@@ -1,0 +1,56 @@
+version: '3.9'
+
+services:
+
+  # ── PostgreSQL + PostGIS ──────────────────────────────────────────────────
+  db:
+    image: postgis/postgis:16-3.4
+    container_name: trazado_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: trazado_electrico
+      POSTGRES_USER: trazado
+      POSTGRES_PASSWORD: trazado_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./init:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U trazado -d trazado_electrico"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── pg_tileserv — Vector Tiles desde PostGIS ──────────────────────────────
+  tileserv:
+    image: pramsey/pg_tileserv:latest
+    container_name: trazado_tileserv
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://trazado:trazado_pass@db:5432/trazado_electrico
+    ports:
+      - "7800:7800"
+
+  # ── PostgREST — API REST sobre PostgreSQL ─────────────────────────────────
+  api:
+    image: postgrest/postgrest:v12.0.2
+    container_name: trazado_api
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      PGRST_DB_URI: postgresql://trazado:trazado_pass@db:5432/trazado_electrico
+      PGRST_DB_SCHEMA: public
+      PGRST_DB_ANON_ROLE: trazado_anon
+      PGRST_JWT_SECRET: "cambia_este_secreto_en_produccion_min32chars"
+      PGRST_SERVER_PORT: "3000"
+    ports:
+      - "3000:3000"
+
+volumes:
+  db_data:

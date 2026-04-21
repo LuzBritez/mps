@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../models/incidencia_local.dart';
 import '../repositories/incidencia_repository.dart';
@@ -27,33 +26,25 @@ import '../services/local_db_schema.dart';
 class ColaSincronizacionService {
   final Connectivity _connectivity;
   final IncidenciaRepository _incidenciaRepo;
-  final SupabaseClient _supabase;
 
-  /// Nombre del archivo de base de datos SQLite local.
   static const String _dbName = 'maps_offline.db';
-
-  /// Número máximo de intentos de sincronización por incidencia.
   static const int _maxIntentos = 3;
 
   Database? _db;
-  StreamSubscription<List<ConnectivityResult>>? _connectivitySub;
+  StreamSubscription<dynamic>? _connectivitySub;
   bool _estabaDesconectado = false;
 
   final StreamController<int> _pendientesController =
       StreamController<int>.broadcast();
 
-  /// Callback opcional para notificar al Operario cuando una incidencia
-  /// falla tras los [_maxIntentos] intentos. Requerimiento 7.4
   final void Function(IncidenciaLocal incidencia)? onFalloPersistente;
 
   ColaSincronizacionService({
     Connectivity? connectivity,
     IncidenciaRepository? incidenciaRepo,
-    SupabaseClient? supabase,
     this.onFalloPersistente,
   })  : _connectivity = connectivity ?? Connectivity(),
-        _incidenciaRepo = incidenciaRepo ?? IncidenciaRepository(),
-        _supabase = supabase ?? Supabase.instance.client;
+        _incidenciaRepo = incidenciaRepo ?? IncidenciaRepository();
 
   // ── API pública ───────────────────────────────────────────────────────────
 
@@ -72,7 +63,7 @@ class ColaSincronizacionService {
     _emitirConteoActual();
 
     _connectivitySub = _connectivity.onConnectivityChanged.listen(
-      _onConnectivityChanged,
+      (dynamic result) => _onConnectivityChanged(result),
     );
   }
 
@@ -87,10 +78,14 @@ class ColaSincronizacionService {
 
   // ── Manejo de cambios de conectividad ─────────────────────────────────────
 
-  Future<void> _onConnectivityChanged(
-    List<ConnectivityResult> results,
-  ) async {
-    final hayConexion = results.any((r) => r != ConnectivityResult.none);
+  Future<void> _onConnectivityChanged(dynamic result) async {
+    // Soporta connectivity_plus <6 (ConnectivityResult) y >=6 (List<ConnectivityResult>)
+    bool hayConexion;
+    if (result is List) {
+      hayConexion = (result).any((r) => r != ConnectivityResult.none);
+    } else {
+      hayConexion = result != ConnectivityResult.none;
+    }
 
     if (hayConexion && _estabaDesconectado) {
       // Reconexión detectada: sincronizar pendientes.

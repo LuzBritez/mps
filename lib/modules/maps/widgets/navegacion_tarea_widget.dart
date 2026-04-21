@@ -1,22 +1,18 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../models/models.dart';
 import '../repositories/red_electrica_repository.dart';
 import '../repositories/tarea_repository.dart';
+import '../services/api_client.dart';
 import '../services/reloj_ntp_service.dart';
 
 /// Widget de navegación de tarea asignada.
-///
 /// Requerimientos: 5.1–5.6, 7.5, 8.7
 class NavegacionTareaWidget extends StatefulWidget {
   final int tareaId;
   final RelojNTPService relojNTP;
   final TareaRepository tareaRepo;
   final RedElectricaRepository redRepo;
-  final SupabaseClient supabase;
   final void Function(int lmtId)? onLmtResaltar;
 
   const NavegacionTareaWidget({
@@ -25,7 +21,6 @@ class NavegacionTareaWidget extends StatefulWidget {
     required this.relojNTP,
     required this.tareaRepo,
     required this.redRepo,
-    required this.supabase,
     this.onLmtResaltar,
   });
 
@@ -40,18 +35,11 @@ class _NavegacionTareaWidgetState extends State<NavegacionTareaWidget> {
   bool _cargando = true;
   String? _error;
   bool _completando = false;
-  RealtimeChannel? _realtimeChannel;
 
   @override
   void initState() {
     super.initState();
     _cargarTarea();
-  }
-
-  @override
-  void dispose() {
-    _realtimeChannel?.unsubscribe();
-    super.dispose();
   }
 
   Future<void> _cargarTarea() async {
@@ -65,7 +53,11 @@ class _NavegacionTareaWidgetState extends State<NavegacionTareaWidget> {
         nodos = todos.where((n) => ordenMap.containsKey(n.id)).toList()
           ..sort((a, b) => ordenMap[a.id]!.compareTo(ordenMap[b.id]!));
       }
-      final rows = await widget.supabase.from('progreso_nodos').select().eq('tarea_id', widget.tareaId);
+
+      // Cargar progreso desde PostgREST
+      final rows = await apiClient.select('progreso_nodos', filters: {
+        'tarea_id': 'eq.${widget.tareaId}',
+      });
       final progresoMap = <int, ProgresoNodo>{};
       for (final row in rows) {
         final nodoId = (row['nodo_id'] as num).toInt();
@@ -81,41 +73,10 @@ class _NavegacionTareaWidgetState extends State<NavegacionTareaWidget> {
       if (mounted) {
         setState(() { _tarea = tarea; _nodos = nodos; _progreso..clear()..addAll(progresoMap); _cargando = false; });
         if (tarea.lmtId != null) widget.onLmtResaltar?.call(tarea.lmtId!);
-        _suscribirRealtime();
       }
     } catch (e) {
       if (mounted) setState(() { _error = 'Error al cargar la tarea: $e'; _cargando = false; });
     }
-  }
-
-  void _suscribirRealtime() {
-    _realtimeChannel?.unsubscribe();
-    _realtimeChannel = widget.supabase
-        .channel('progreso_nodos_tarea_${widget.tareaId}')
-        .onPostgresChanges(
-          event: PostgresChangeEvent.all,
-          schema: 'public',
-          table: 'progreso_nodos',
-          filter: PostgresChangeFilter(type: PostgresChangeFilterType.eq, column: 'tarea_id', value: widget.tareaId),
-          callback: (payload) {
-            if (!mounted) return;
-            final record = payload.newRecord;
-            if (record.isEmpty) return;
-            final nodoId = (record['nodo_id'] as num?)?.toInt();
-            if (nodoId == null) return;
-            setState(() {
-              _progreso[nodoId] = ProgresoNodo(
-                tareaId: widget.tareaId,
-                nodoId: nodoId,
-                inspeccionado: (record['inspeccionado'] as bool?) ?? false,
-                inspeccionadoEn: record['inspeccionado_en'] != null ? DateTime.parse(record['inspeccionado_en'] as String) : null,
-                tiempoVerdadero: record['tiempo_verdadero'] != null ? DateTime.parse(record['tiempo_verdadero'] as String) : null,
-                tiempoDispositivo: record['tiempo_dispositivo'] != null ? DateTime.parse(record['tiempo_dispositivo'] as String) : null,
-              );
-            });
-          },
-        )
-        .subscribe();
   }
 
   Future<void> _marcarNodo(int nodoId) async {
@@ -125,7 +86,7 @@ class _NavegacionTareaWidgetState extends State<NavegacionTareaWidget> {
       _progreso[nodoId] = ProgresoNodo(tareaId: widget.tareaId, nodoId: nodoId, inspeccionado: true, inspeccionadoEn: tv, tiempoVerdadero: tv, tiempoDispositivo: td);
     });
     try {
-      await widget.supabase.from('progreso_nodos').upsert({
+      await apiClient.upsert('progreso_nodos', {
         'tarea_id': widget.tareaId, 'nodo_id': nodoId, 'inspeccionado': true,
         'inspeccionado_en': tv.toUtc().toIso8601String(),
         'tiempo_verdadero': tv.toUtc().toIso8601String(),
@@ -143,7 +104,7 @@ class _NavegacionTareaWidgetState extends State<NavegacionTareaWidget> {
       await widget.tareaRepo.actualizarEstadoTarea(widget.tareaId, EstadoTarea.completada);
       if (mounted) ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Tarea completada exitosamente.')));
     } catch (e) {
-      if (mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Error al completar la tarea: $e')));
+      if (mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Error: $e')));
     } finally {
       if (mounted) setState(() => _completando = false);
     }

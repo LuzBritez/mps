@@ -1,4 +1,5 @@
 /// Barrel export de todos los modelos del módulo Maps.
+library;
 export 'user_context.dart';
 export 'enums.dart';
 export 'lmt.dart';

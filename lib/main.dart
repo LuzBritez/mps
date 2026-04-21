@@ -1,29 +1,29 @@
 import 'package:flutter/material.dart';
 import 'modules/maps/maps_module.dart';
 import 'modules/maps/models/user_context.dart';
+import 'modules/maps/services/api_client.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  // Configurar la URL del backend Docker.
+  // - Emulador Android: 10.0.2.2 apunta al host de la máquina
+  // - Dispositivo físico: usar la IP de la máquina en la red WiFi
+  //   Ejemplo: http://192.168.1.100:3000
+  apiClient = ApiClient(
+    baseUrl: const String.fromEnvironment(
+      'API_URL',
+      defaultValue: 'http://10.0.2.2:3000',
+    ),
+  );
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Trazado Eléctrico',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
-        useMaterial3: true,
+  runApp(
+    MapsModule.create(
+      userContext: const UserContext(
+        userId: 1,
+        nombre: 'Usuario Demo',
+        rol: UserRole.coordinador,
       ),
-      home: MapsModule.create(
-        userContext: UserContext(
-          userId: 1,
-          nombre: 'Usuario Demo',
-          rol: UserRole.operario,
-        ),
-      ),
-    );
-  }
+    ),
+  );
 }

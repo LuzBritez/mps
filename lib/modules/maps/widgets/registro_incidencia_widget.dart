@@ -234,7 +234,7 @@ class _SelectorCategoria extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DropdownButtonFormField<String>(
-      value: valor,
+      initialValue: valor,
       decoration: const InputDecoration(
         labelText: 'Categoría *',
         border: OutlineInputBorder(),

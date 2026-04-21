@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'models/user_context.dart';
 import 'repositories/alarma_repository.dart';
@@ -17,31 +16,14 @@ import 'widgets/control_capas_widget.dart';
 import 'widgets/mapa_interactivo_widget.dart';
 import 'widgets/navegacion_tarea_widget.dart';
 
-/// URL base de pg_tileserv. Configurable por entorno.
 const String _kPgTileservBaseUrl = String.fromEnvironment(
   'PG_TILESERV_URL',
   defaultValue: 'http://localhost:7800',
 );
 
-/// Punto de entrada del módulo Maps — Trazabilidad Eléctrica de Campo.
-///
-/// La Aplicación Principal invoca [MapsModule.create] pasando el contexto
-/// del usuario autenticado y, opcionalmente, el ID de una tarea específica
-/// para navegación directa.
-///
-/// Requerimientos: 1.1, 4.6, 5.6
 class MapsModule {
   MapsModule._();
 
-  /// Crea y retorna el widget raíz del módulo.
-  ///
-  /// [userContext] contiene la identidad y rol del usuario autenticado.
-  /// Si [userContext.rol] == [UserRole.coordinador], el router interno
-  /// habilita las vistas de gestión (alarmas, despacho, monitor).
-  ///
-  /// [initialTaskId] es opcional: si se provee, el módulo navega
-  /// directamente a NavegacionTareaWidget sin pantalla de selección.
-  /// Requerimiento 4.6
   static Widget create({
     required UserContext userContext,
     int? initialTaskId,
@@ -53,9 +35,6 @@ class MapsModule {
   }
 }
 
-/// Widget raíz interno del módulo con router por rol.
-///
-/// Requerimientos: 4.6, 5.6, 9.1
 class _MapsModuleRoot extends StatefulWidget {
   final UserContext userContext;
   final int? initialTaskId;
@@ -70,13 +49,10 @@ class _MapsModuleRoot extends StatefulWidget {
 }
 
 class _MapsModuleRootState extends State<_MapsModuleRoot> {
-  // ── Servicios compartidos ─────────────────────────────────────────────────
   late final RelojNTPService _relojNTP;
   late final CapasStateService _capasState;
   late final MapaRenderService _renderService;
   late final ColaSincronizacionService _colaSincronizacion;
-
-  // ── Repositorios ──────────────────────────────────────────────────────────
   late final RedElectricaRepository _redRepo;
   late final AlarmaRepository _alarmaRepo;
   late final TareaRepository _tareaRepo;
@@ -98,24 +74,17 @@ class _MapsModuleRootState extends State<_MapsModuleRoot> {
     _alarmaRepo = AlarmaRepository();
     _tareaRepo = TareaRepository();
     _incidenciaRepo = IncidenciaRepository();
-
     _colaSincronizacion = ColaSincronizacionService(
       incidenciaRepo: _incidenciaRepo,
-      onFalloPersistente: (_) {
-        // Notificación al Operario manejada por el servicio
-      },
+      onFalloPersistente: (_) {},
     );
 
-    // Inicializar servicios en paralelo
     await Future.wait([
       _relojNTP.inicializar(),
       _capasState.cargarEstado(),
     ]);
 
-    // Sincronizar NTP en background (no bloquear la UI)
     _relojNTP.sincronizarConNTP().ignore();
-
-    // Iniciar cola de sincronización offline
     _colaSincronizacion.iniciar();
 
     if (mounted) setState(() => _inicializado = true);
@@ -136,7 +105,9 @@ class _MapsModuleRootState extends State<_MapsModuleRoot> {
       );
     }
 
-    // Req. 4.6: si hay initialTaskId, navegar directamente a NavegacionTareaWidget
+    final esCoordinador = widget.userContext.rol == UserRole.coordinador;
+
+    // Req. 4.6: si hay initialTaskId, ir directo a la tarea
     if (widget.initialTaskId != null) {
       return MaterialApp(
         home: Scaffold(
@@ -146,77 +117,52 @@ class _MapsModuleRootState extends State<_MapsModuleRoot> {
             relojNTP: _relojNTP,
             tareaRepo: _tareaRepo,
             redRepo: _redRepo,
-            supabase: Supabase.instance.client,
           ),
         ),
+        routes: _buildRoutes(esCoordinador),
       );
     }
 
-    // Router por rol
     return MaterialApp(
       title: 'Trazado Eléctrico',
-      initialRoute: '/',
-      onGenerateRoute: (settings) => _generarRuta(settings),
+      home: _PantallaInicio(
+        userContext: widget.userContext,
+        capasState: _capasState,
+        renderService: _renderService,
+        colaSincronizacion: _colaSincronizacion,
+        esCoordinador: esCoordinador,
+      ),
+      routes: _buildRoutes(esCoordinador),
     );
   }
 
-  Route<dynamic>? _generarRuta(RouteSettings settings) {
-    final esCoordinador = widget.userContext.rol == UserRole.coordinador;
-
-    switch (settings.name) {
-      case '/':
-        return MaterialPageRoute(builder: (_) => _PantallaInicio(
-          userContext: widget.userContext,
-          capasState: _capasState,
-          renderService: _renderService,
-          colaSincronizacion: _colaSincronizacion,
-          esCoordinador: esCoordinador,
-        ));
-
-      case '/alarmas':
-        if (!esCoordinador) return _rutaBloqueada();
-        return MaterialPageRoute(builder: (_) => GestionAlarmasView(
-          coordinadorId: widget.userContext.userId,
-          alarmaRepo: _alarmaRepo,
-          relojNTP: _relojNTP,
-        ));
-
-      case '/despacho':
-        if (!esCoordinador) return _rutaBloqueada();
-        final alarmaId = settings.arguments as int? ?? 0;
-        return MaterialPageRoute(builder: (_) => DespachoTareasView(
-          coordinadorId: widget.userContext.userId,
-          alarmaId: alarmaId,
-          tareaRepo: _tareaRepo,
-          relojNTP: _relojNTP,
-          capasStateService: _capasState,
-          renderService: _renderService,
-          pgTileservBaseUrl: _kPgTileservBaseUrl,
-        ));
-
-      case '/monitor':
-        if (!esCoordinador) return _rutaBloqueada();
-        return MaterialPageRoute(builder: (_) => MonitorCuadrillasView(
-          supabase: Supabase.instance.client,
-        ));
-
-      default:
-        return MaterialPageRoute(builder: (_) => const Scaffold(
-          body: Center(child: Text('Ruta no encontrada')),
-        ));
-    }
-  }
-
-  /// Ruta bloqueada para operarios que intentan acceder a vistas de Coordinador.
-  /// Requerimiento: router interno bloquea rutas no autorizadas.
-  Route<dynamic> _rutaBloqueada() {
-    return MaterialPageRoute(builder: (_) => const Scaffold(
-      body: Center(child: Text('Acceso no autorizado.')),
-    ));
+  Map<String, WidgetBuilder> _buildRoutes(bool esCoordinador) {
+    return {
+      '/alarmas': (_) => esCoordinador
+          ? GestionAlarmasView(
+              coordinadorId: widget.userContext.userId,
+              alarmaRepo: _alarmaRepo,
+              relojNTP: _relojNTP,
+            )
+          : const Scaffold(body: Center(child: Text('Acceso no autorizado.'))),
+      '/despacho': (_) => esCoordinador
+          ? DespachoTareasView(
+              coordinadorId: widget.userContext.userId,
+              alarmaId: 0,
+              tareaRepo: _tareaRepo,
+              relojNTP: _relojNTP,
+              capasStateService: _capasState,
+              renderService: _renderService,
+              pgTileservBaseUrl: _kPgTileservBaseUrl,
+            )
+          : const Scaffold(body: Center(child: Text('Acceso no autorizado.'))),
+      '/monitor': (_) => esCoordinador
+          ? const MonitorCuadrillasView()
+          : const Scaffold(body: Center(child: Text('Acceso no autorizado.'))),
+    };
   }
 }
 
-/// Pantalla de inicio del módulo con mapa y controles.
 class _PantallaInicio extends StatelessWidget {
   final UserContext userContext;
   final CapasStateService capasState;
@@ -238,7 +184,6 @@ class _PantallaInicio extends StatelessWidget {
       appBar: AppBar(
         title: Text('Trazado Eléctrico — ${userContext.nombre}'),
         actions: [
-          // Contador de incidencias pendientes — Req. 7.3
           StreamBuilder<int>(
             stream: colaSincronizacion.pendientesStream,
             builder: (context, snap) {
@@ -253,7 +198,6 @@ class _PantallaInicio extends StatelessWidget {
               );
             },
           ),
-          // Menú del Coordinador
           if (esCoordinador)
             PopupMenuButton<String>(
               onSelected: (route) => Navigator.pushNamed(context, route),
@@ -265,17 +209,20 @@ class _PantallaInicio extends StatelessWidget {
             ),
         ],
       ),
-      body: Stack(children: [
-        MapaInteractivoWidget(
-          pgTileservBaseUrl: _kPgTileservBaseUrl,
-          capasStateService: capasState,
-          renderService: renderService,
-        ),
-        Positioned(
-          top: 8, right: 8,
-          child: ControlCapasWidget(capasStateService: capasState),
-        ),
-      ]),
+      body: Stack(
+        children: [
+          MapaInteractivoWidget(
+            pgTileservBaseUrl: _kPgTileservBaseUrl,
+            capasStateService: capasState,
+            renderService: renderService,
+          ),
+          Positioned(
+            top: 8,
+            right: 8,
+            child: ControlCapasWidget(capasStateService: capasState),
+          ),
+        ],
+      ),
     );
   }
 }

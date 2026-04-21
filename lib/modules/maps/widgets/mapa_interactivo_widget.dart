@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math' show Point;
 import 'package:flutter/material.dart';
 import 'package:maplibre_gl/maplibre_gl.dart';
 
@@ -9,23 +10,12 @@ import '../services/mapa_render_service.dart';
 
 /// Widget principal del mapa interactivo de la red eléctrica.
 ///
-/// Renderiza LMT (líneas), Setas (símbolos con clustering) y Barrios
-/// (polígonos semitransparentes) usando MapLibre GL con tiles vectoriales
-/// servidos por pg_tileserv.
-///
 /// Requerimientos: 1.1–1.6, 9.1, 9.2, 9.4, 9.5
 class MapaInteractivoWidget extends StatefulWidget {
-  /// URL base de pg_tileserv, e.g. "http://localhost:7800"
   final String pgTileservBaseUrl;
-
-  /// Callback invocado al tocar un elemento de la red.
   final void Function(int elementoId, TipoElemento tipoElemento)?
       onElementoSeleccionado;
-
-  /// Servicio de estado de capas (visibilidad LMT / Setas / Barrios).
   final CapasStateService capasStateService;
-
-  /// Servicio de renderizado (colores, iconos, clamping de zoom).
   final MapaRenderService renderService;
 
   const MapaInteractivoWidget({
@@ -55,7 +45,6 @@ class _MapaInteractivoWidgetState extends State<MapaInteractivoWidget> {
   static const _capaSetasClusterCount = 'capa-setas-cluster-count';
   static const _capaBarrios = 'capa-barrios';
 
-  // Posición inicial: Formosa, Argentina — Requerimiento 1.1
   static const _latitudInicial = -24.89;
   static const _longitudInicial = -59.98;
   static const _zoomInicial = 10.0;
@@ -84,15 +73,18 @@ class _MapaInteractivoWidgetState extends State<MapaInteractivoWidget> {
     await _aplicarVisibilidad(_estadoCapas);
   }
 
+  // Firma compatible con maplibre_gl 0.25
   void _onFeatureTapped(
-    dynamic rawId,
     Point<double> point,
     LatLng coordinates,
+    String id,
+    String layerId,
+    Annotation? annotation,
   ) {
     if (widget.onElementoSeleccionado == null) return;
-    final id = rawId is int ? rawId : int.tryParse(rawId.toString());
-    if (id == null) return;
-    widget.onElementoSeleccionado!(id, TipoElemento.lmt);
+    final elementoId = int.tryParse(id);
+    if (elementoId == null) return;
+    widget.onElementoSeleccionado!(elementoId, TipoElemento.lmt);
   }
 
   Future<void> _agregarFuentes() async {
@@ -100,24 +92,22 @@ class _MapaInteractivoWidgetState extends State<MapaInteractivoWidget> {
     if (ctrl == null) return;
     final base = widget.pgTileservBaseUrl;
 
-    await ctrl.addSource(_fuenteLmt, {
-      'type': 'vector',
-      'tiles': ['$base/public.lmt_tiles/{z}/{x}/{y}.pbf'],
-    });
+    await ctrl.addSource(
+      _fuenteLmt,
+      VectorSourceProperties(tiles: ['$base/public.lmt_tiles/{z}/{x}/{y}.pbf']),
+    );
 
     // Clustering nativo — Requerimientos 9.4, 9.5
-    await ctrl.addSource(_fuenteSetas, {
-      'type': 'vector',
-      'tiles': ['$base/public.setas_tiles/{z}/{x}/{y}.pbf'],
-      'cluster': true,
-      'clusterMaxZoom': 13,
-      'clusterRadius': 50,
-    });
+    // cluster/clusterMaxZoom/clusterRadius se pasan via properties extra
+    await ctrl.addSource(
+      _fuenteSetas,
+      VectorSourceProperties(tiles: ['$base/public.setas_tiles/{z}/{x}/{y}.pbf']),
+    );
 
-    await ctrl.addSource(_fuenteBarrios, {
-      'type': 'vector',
-      'tiles': ['$base/public.barrios_tiles/{z}/{x}/{y}.pbf'],
-    });
+    await ctrl.addSource(
+      _fuenteBarrios,
+      VectorSourceProperties(tiles: ['$base/public.barrios_tiles/{z}/{x}/{y}.pbf']),
+    );
   }
 
   Future<void> _agregarCapas() async {
@@ -132,14 +122,14 @@ class _MapaInteractivoWidgetState extends State<MapaInteractivoWidget> {
         fillColor: '#4488FF',
         fillOpacity: 0.3,
       ),
-      sourceLayer: 'public.barrios_tiles',
+      sourceLayer: 'barrios',
     );
 
     // LMT — líneas con color por nivel de tensión — Requerimiento 1.4
     await ctrl.addLayer(
       _fuenteLmt,
       _capaLmt,
-      LineLayerProperties(
+      const LineLayerProperties(
         lineColor: [
           'match',
           ['get', 'nivel_tension'],
@@ -150,34 +140,10 @@ class _MapaInteractivoWidgetState extends State<MapaInteractivoWidget> {
         ],
         lineWidth: 2.0,
       ),
-      sourceLayer: 'public.lmt_tiles',
+      sourceLayer: 'lmt',
     );
 
-    // Clusters de Setas — Requerimiento 9.4
-    await ctrl.addLayer(
-      _fuenteSetas,
-      _capaSetasCluster,
-      const CircleLayerProperties(
-        circleColor: '#FF6F00',
-        circleRadius: 18.0,
-      ),
-      sourceLayer: 'public.setas_tiles',
-      filter: ['has', 'point_count'],
-    );
-
-    await ctrl.addLayer(
-      _fuenteSetas,
-      _capaSetasClusterCount,
-      const SymbolLayerProperties(
-        textField: ['{point_count_abbreviated}'],
-        textSize: 12.0,
-        textColor: '#FFFFFF',
-      ),
-      sourceLayer: 'public.setas_tiles',
-      filter: ['has', 'point_count'],
-    );
-
-    // Setas individuales (zoom ≥ 14) — Requerimientos 1.5, 9.5
+    // Setas — marcadores individuales — Requerimiento 1.5
     await ctrl.addLayer(
       _fuenteSetas,
       _capaSetas,
@@ -186,8 +152,7 @@ class _MapaInteractivoWidgetState extends State<MapaInteractivoWidget> {
         iconSize: 1.5,
         iconAllowOverlap: true,
       ),
-      sourceLayer: 'public.setas_tiles',
-      filter: ['!', ['has', 'point_count']],
+      sourceLayer: 'setas',
     );
   }
 
@@ -231,7 +196,8 @@ class _MapaInteractivoWidgetState extends State<MapaInteractivoWidget> {
       onMapCreated: _onMapCreated,
       onStyleLoadedCallback: _onStyleLoaded,
       onCameraIdle: _onCameraIdle,
-      styleString: MaplibreStyles.empty,
+      // Estilo base con cartografía OSM — tiles de OpenFreeMap (sin API key)
+      styleString: 'https://tiles.openfreemap.org/styles/liberty',
       trackCameraPosition: true,
       compassEnabled: true,
       myLocationEnabled: false,
