@@ -134,7 +134,7 @@ class _MapaInteractivoWidgetState extends State<MapaInteractivoWidget> {
     final ctrl = _controller;
     if (ctrl == null) return;
 
-    final lmtJson = jsonDecode(await rootBundle.loadString('datos/lmt.geojson'))
+    final lmtJson = jsonDecode(await rootBundle.loadString('datos/tendido_capital_desde_kml.geojson'))
         as Map<String, dynamic>;
     await ctrl.addGeoJsonSource(_fuenteLmt, lmtJson);
 
@@ -372,7 +372,15 @@ class _InfoFeatureSheet extends StatelessWidget {
           const Color(0xFFFF9800),
           [
             ('ID', _val('id')),
+            ('KML ID', _val('kml_id')),
+            ('Tensión', '${_val('tension')} kV'),
+            ('N° Distribución', _val('n_distribu')),
             ('Localidad', _val('localidad')),
+            ('Material', _val('material')),
+            ('Sección', _val('seccion')),
+            ('Departamento', _val('depto')),
+            ('Longitud', '${_val('length_km')} km'),
+            ('Puntos', _val('num_points')),
           ],
         ),
       _ => (

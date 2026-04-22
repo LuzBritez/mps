@@ -45,6 +45,7 @@ flutter:
   assets:
     - datos/setas.geojson
     - datos/lmt.geojson
+    - datos/tendido_capital_desde_kml.geojson
     - datos/seccionamientos.geojson
     - datos/centro de distribucion.geojson
     - datos/barrios.geojson
